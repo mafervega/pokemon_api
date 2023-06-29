@@ -1,25 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Bitter&display=swap');
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: sans-serif;
 }
-
 :root {
-  --azul:#db0c0cd8;
+  --azul:#badc58;
   --rojoclaro: #fff;
   --blanco: #EAEAEA;
   --button:#1f1b1b;
+  --verdeO: #6AB04C;
 }
-
 body {
   margin: 30px;
   background-color: var(--blanco);
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
-
 .encabezado {
-  background-color: var(--azul);
+  background-color: var(--verdeO);
   display: flex;
   height: 100px;
   border-left: 1px solid black;
@@ -29,35 +28,31 @@ body {
   border-top-right-radius: 15px;
   align-items: center;
 }
-
 header {
   display: flex;
-  justify-content: space-around;
+  /* justify-content: space-around; */
 }
-
 .header {
   display: flex;
 }
-
 .imagen {
   width: 50px;
   height: 50px;
   margin-right: 15px;
+  margin-left: 40px;
 }
-
-.titulo_header {
+.titulo {
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-right: 430px;
 }
-
 .input__pokemon {
   margin-top: 10px;
   padding: 10px 10px;
   border-radius: 10px;
   width: 500px;
 }
-
 .button {
   margin-top: 10px;
   padding: 10px 10px;
@@ -65,21 +60,18 @@ header {
   background-color: var(--button);
   color: #fff;
 }
-
 .principal {
   background-color: var(--rojoclaro);
   display: flex;
   height: 600px;
   border: 1px solid black;
 }
-
 .principal {
   width: 100%;
   border: 1px solid black;
 }
-
 .section-a {
-  width: 800px;
+  width: 740px;
   height: 60px;
   background-color: var(--azul);
   text-align: center;
@@ -95,26 +87,27 @@ header {
   border-right: 1px solid var(--button);
   /* background-color:  */
 }
-
 .poke-img {
   width: 400px;
   text-align: center;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-left: 300px;
-  margin-top: 10px;
+  margin-left: 250px;
+  margin-top: 20px;
   font-size: xx-large;
 }
-
 .section-union {
   display: flex;
   justify-content: space-around;
-  align-items: center;
+  padding-top: 130px;
+  padding-right: 700px;
 }
-
+.letras{
+  color: #fff;
+}
 .section-c {
-  background-color: var(--azul);
+  background-color: var(--verdeO);
   border: 2px solid black;
   border-radius: 15px;
   width: 400px;
@@ -124,18 +117,15 @@ header {
   justify-content: space-around;
   align-items: center;
 }
-
 .number {
   margin: 10px;
 }
-
 .poke-types div {
   padding: 5px;
   margin: 5px;
   border-radius: 4px;
   border: 1px dashed black;
 }
-
 .poke-stats div {
   display: flex;
   justify-content: space-between;
@@ -143,7 +133,6 @@ header {
   padding: 5px;
   font-size: 18px;
 }
-
 footer {
   background-color: var(--azul);
   height: 150px;
@@ -157,19 +146,22 @@ footer {
   display: flex;
   justify-content: space-evenly;
 }
-footer .pokemon2 {
-  width: 100px;
-  height: 80px;
+.letraf{
+  display: flex;
+  align-items: center;
+  font-family: 'Bitter', serif;
 }
-footer .pokemon3 {
-  width: 100px;
-  height: 80px;
+.footer-section {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
-footer .pokemon4 {
-  width: 100px;
-  height: 80px;
+footer .pokemon2, .pokemon3, .pokemon4, .pokemon5 {
+  width: 160px;
+  height: 120px;
 }
-footer .pokemon5 {
-  width: 100px;
-  height: 80px;
-}/*# sourceMappingURL=styles.css.map */
+footer .pokemon2:hover, .pokemon3:hover, .pokemon4:hover, .pokemon5:hover {
+  width: 200px;
+  height: 160px;
+  color: #6AB04C;
+}

@@ -5,6 +5,7 @@ const pokeImgContainer = document.querySelector('[data-poke-img-container]');
 const pokeId = document.querySelector('[data-poke-id]');
 const pokeTypes = document.querySelector('[data-poke-types]');
 const pokeStats = document.querySelector('[data-poke-stats]');
+//Diccionario //Se mapea un tipo a un color
 const typeColors = {
     electric: '#FFEA70',
     normal: '#B09398',
@@ -24,23 +25,19 @@ const typeColors = {
     fighting: '#2F2F2F',
     default: '#2A1A1F',
 };
-
-
+//Crear la función buscar
 const searchPokemon = event => {
-    event.preventDefault();
+    event.preventDefault(); //Esto se hace para evitar que la página recargue cuando le doy al botón
     const { value } = event.target.pokemon;
     fetch(`https://pokeapi.co/api/v2/pokemon/${value.toLowerCase()}`)
         .then(data => data.json())
         .then(response => renderPokemonData(response))
         .catch(err => renderNotFound())
 }
-
+//Función renderPokemonData //Para el nombre, la imagén y el No. del pokemon
 const renderPokemonData = data => {
     const sprite =  data.sprites.front_default;
     const { stats, types } = data;
-
-    
-
     pokeName.textContent = data.name;
     pokeImg.setAttribute('src', sprite);
     pokeId.textContent = `NO. ${data.id}`;
@@ -48,15 +45,14 @@ const renderPokemonData = data => {
     renderPokemonTypes(types);
     renderPokemonStats(stats);
 }
-
-
+//Función para que el color del fondo se relacione con el tipo del pokemon
 const setCardColor = types => {
     const colorOne = typeColors[types[0].type.name];
     const colorTwo = types[1] ? typeColors[types[1].type.name] : typeColors.default;
     pokeImg.style.background =  `radial-gradient(${colorTwo} 33%, ${colorOne} 33%)`;
     pokeImg.style.backgroundSize = ' 5px 5px';
 }
-
+//Función para los tipos y el color de la letra de los tipos
 const renderPokemonTypes = types => {
     pokeTypes.innerHTML = '';
     types.forEach(type => {
@@ -66,7 +62,7 @@ const renderPokemonTypes = types => {
         pokeTypes.appendChild(typeTextElement);
     });
 }
-
+// Función para los stats
 const renderPokemonStats = stats => {
     pokeStats.innerHTML = '';
     stats.forEach(stat => {
@@ -80,7 +76,7 @@ const renderPokemonStats = stats => {
         pokeStats.appendChild(statElement);
     });
 }
-
+//Función por si no se encuentra el pokemon
 const renderNotFound = () => {
     pokeName.textContent = 'No encontrado';
     pokeImg.setAttribute('src', 'poke-shadow .png');
@@ -89,4 +85,3 @@ const renderNotFound = () => {
     pokeStats.innerHTML = '';
     pokeId.textContent = '';
 }
-
