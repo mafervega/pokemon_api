@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokedex</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet">
+    <script src="script.js" type="text/javascript" defer></script>
+    <link href="/css/styles.css" rel="stylesheet" />
+</head>
+<body> 
+    <header class="encabezado">
+        <div class="header">
+            <figure>
+                <img class="imagen" src="/hero-pokeball-3430739968171e9fe85357e4739be704.png" alt="bolaPokemon2">
+            </figure>
+            <h2 class="titulo">POKÉDEX</h2>
+            </div>
+            <div class="search__input">      
+            <form onsubmit="searchPokemon(event)">
+                <input type="text" class="input__pokemon"  name="pokemon" placeholder="search"/>
+                <button type="submit" class="button">search</button>
+            </form>
+            </div>   
+    </header>
+     
+
+<main class="principal">
+    <section>
+        <section data-poke-name class="section-a">Pokedex</section>
+        <section data-poke-img-container class="section-b">
+            <img data-poke-img class="poke-img" src=""/>
+        </section>
+    </section>
+        <section class="section-union">
+               <section class="section-c">
+              
+                   <div data-poke-id class="number"></div>
+                   <div data-poke-types class="poke-types"></div>
+                   <div data-poke-stats class="poke-stats"></div>
+                   
+               </section>
+               
+       </section>
+       
+    
+</main>
+    <footer>
+        <h1 class="letraf">OTROS</h1>
+         <section class="footer-section">   
+              <div class="seleccion"><img class="pokemon2" src="/image/Marshadow.webp" alt=""></div>
+            <div class="seleccion"><img class="pokemon3" src="/image/Lugia.webp" alt=""></div>
+             <div class="seleccion"><img class="pokemon4" src="/image/Lucario.webp" alt=""></div>
+            <div class="seleccion"><img class="pokemon5" src="/image/640px-Eevee.png" alt=""></div>
+           </section>      
+    </footer> 
+
+</body>
+</html>
